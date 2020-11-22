@@ -126,3 +126,27 @@ int main()
    }
 
 }
+int desenhar_mapa()
+{
+   int linha,coluna;
+   for (linha=0;linha<5;linha++) {
+      for (coluna=0;coluna<5;coluna++) {
+         if ((linha == linha_atual) && (coluna == coluna_atual)) {
+            printf("R");
+            continue;
+         }
+         if (mapa[linha][coluna] == CHAO)
+            printf(" ");
+         if (mapa[linha][coluna] == PAREDE)
+            printf("*");
+         if (mapa[linha][coluna] == OCUPADO)
+            printf("+");
+         if (mapa[linha][coluna] == QUEIJO)
+            printf("Q");
+        if (mapa[linha][coluna] == RATO)
+            printf(" ");
+      }
+      printf("\n");
+   }
+   return OK;
+}
